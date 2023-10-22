@@ -1,6 +1,7 @@
 import pytest
 import allure
-from pages.important_questions_page import ImportantQuestions
+from pages.home_page import HomePage
+
 
 expected_answers = [
     "Сутки — 400 рублей. Оплата курьеру — наличными или картой.",
@@ -19,13 +20,13 @@ expected_answers = [
 
 
 class TestImportantQuestions:
-
-    @allure.title('Выпадающий список в разделе «Вопросы о важном»')
+    @allure.title('Проверка выпадающего списка в разделе «Вопросы о важном»')
     @allure.description('проверить: когда нажимаешь на стрелочку, открывается соответствующий текст')
     @pytest.mark.parametrize("index, expected_answer", enumerate(expected_answers))
     def test_important_question_answers(self, driver, index, expected_answer):
-        questions_page = ImportantQuestions(driver)
-        questions_page.go_to_important_questions_page()
+        questions_page = HomePage(driver)
+        questions_page.go_to_home_page()
+        questions_page.consent_cookies()
         questions_page.scroll_to_important_question(index)
         questions_page.click_important_question(index)
         actual_answer = questions_page.get_important_answer_text(index)

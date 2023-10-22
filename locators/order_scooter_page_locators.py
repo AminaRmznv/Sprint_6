@@ -16,7 +16,8 @@ class ScooterOrderPageLocators:
     dropdown_menu = [By.CLASS_NAME, 'Dropdown-menu']
     rental_period = [By.XPATH, "//div[contains(text(),'четверо суток')]"]
     scooter_color_checkbox = [By.CLASS_NAME, "Order_Checkboxes__3lWSI"]
-    comments_field = [By.XPATH, "//div[@class='Order_Form__17u6u']//div[@class='Input_InputContainer__3NykH']//input[@type='text']"]
+    comments_field = [By.XPATH, "//div[@class='Order_Form__17u6u']//div[@class='Input_InputContainer__3NykH']//input["
+                                "@type='text']"]
     confirm_order_popup = [By.CLASS_NAME, "Order_Modal__YZ-d3"]
     yes_button_on_popup = [By.XPATH, "//button[contains(text(), 'Да')]"]
     success_popup = [By.CLASS_NAME, "Order_ModalHeader__3FDaJ"]
